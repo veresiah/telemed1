@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     else 
       flash[:error] = "Invalid Credentials, try again"      
       render 'new'
+    end 
   end 
 
   def destroy  
@@ -18,6 +19,4 @@ class SessionsController < ApplicationController
     redirect_to login_path
     flash[:notice] = "Logged out Successfully!"
   end 
-
-
 end
