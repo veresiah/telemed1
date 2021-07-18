@@ -1,4 +1,11 @@
 Rails.application.routes.draw do 
+  #sessions
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logut' => 'sessions#destroy'
+  get 'signup' => 'patients#new'
+
+
   resources :patients, except: [:index]
   resources :physicians 
   resources :appointments 
