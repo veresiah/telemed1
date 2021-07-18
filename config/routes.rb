@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/logut' => 'sessions#destroy'
   get 'signup' => 'patients#new'
 
-
+  root 'welcome#main'
+  
   resources :patients, except: [:index]
   resources :physicians 
   resources :appointments 
