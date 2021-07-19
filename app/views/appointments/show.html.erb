@@ -1,2 +1,8 @@
-<h1>Appointments#show</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+<h1>Appointment</h1>
+<br>
+  <ul>
+    <li>Date and Time: <%= @appointment.date.strftime('%B %-d, %Y, %I:%M %p %Z') %></li><br>
+    <li>Reason: <%= @ppointment.reason %></li><br>
+</ul>
+<br>
+<%= button_to('Edit Appointment', edit_patient_path(@patient), method: :get) %><br>
