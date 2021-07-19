@@ -1,15 +1,16 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, except: [:new, :create]
+  before_action :set_physician
+  before_action :set_appointment, only: [:show, :destroy]
   def index
-    @appointments = Appointment.all
+    @appointments = @physician.appointments.all #add scope method here?
   end
 
   def new
-    @appointment = Appointment.new 
+    @appointment = @physician.appointments.new 
   end
 
   def create 
-    appointment = Appointment.new(appointment_params)
+    appointment = @physician.appointments.build(appointment_params)
     if appointment.save
       redirect_to appointment_path(appointment)
     else 
@@ -17,23 +18,12 @@ class AppointmentsController < ApplicationController
     end 
   end 
 
-  def edit
-  end
-
   def show
   end
 
-  def update 
-    if appointment.save
-      redirect_to appointment_path(appointment)
-    else 
-      render 'edit'
-    end 
-  end 
-
   def destroy 
     @appointment.destory
-    redirect_to appointments_path
+    redirect_to physician_appointments_path
   end 
 
   private 
@@ -43,5 +33,9 @@ class AppointmentsController < ApplicationController
 
   def set_appointment
     @appointment = Appointment.find(params[:id])
+  end 
+
+  def set_physician
+    @physician = Physician.find(params[:physician_id])
   end 
 end
