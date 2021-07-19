@@ -1,2 +1,20 @@
-<h1>Physicians#edit</h1>
-<p>Find me in app/views/physicians/edit.html.erb</p>
+<h1> Edit <%= @physician.name %>'s Profile </h1>
+<br></br>
+<%= form_for(@physician) do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :speciality %><br>
+  <%= f.text_field :speciality %><br>
+
+  <%= f.label :hospital %><br>
+  <%= f.text_field :hospital %><br>
+
+  <%= f.label :education %><br>
+  <%= f.text_area :education %><br>
+
+  <%= f.label :years_in_practice %><br>
+  <%= f.text_field :years_in_practice %><br>
+
+  <br><%= f.submit %>
+<% end %> 
