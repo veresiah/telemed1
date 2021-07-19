@@ -15,6 +15,14 @@ class SessionsController < ApplicationController
     end 
   end 
 
+  def omniauth
+    patient = Patient.from_omniauth(request.env['omniauth.auth'])
+    patient.valid? 
+    session[:user_id] = patient.id
+    redirect_to patient_path(patient)
+    flash[:success] = "Login was successful" 
+end 
+
   def destroy  
     session.delete :user_id 
     redirect_to login_path
