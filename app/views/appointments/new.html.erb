@@ -1,2 +1,13 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<h1> New Appointment </h1>
+<br></br>
+<%= form_for(@appointment) do |f| %>
+  <%= f.label :date %><br>
+  <%= f.datetime_field :date %><br>
+
+  <%= f.label :reason %><br>
+  <%= f.text_field :reason %><br>
+
+  <br><%= f.submit %>
+<% end %> 
+<br>
+<%= button_to('Edit Appointment', edit_appointment_path(@appointment), method: :get) %><br>
