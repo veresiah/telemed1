@@ -18,6 +18,8 @@ class AppointmentsController < ApplicationController
   end 
 
   def destroy 
+    @appointment.destory
+    redirect_to appointments_path
   end 
 
   private 
