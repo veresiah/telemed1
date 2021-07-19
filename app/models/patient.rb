@@ -4,7 +4,7 @@ class Patient < ApplicationRecord
     has_many :appointments 
     has_many :physicians, through: :appointments 
 
-    validates :name, :password, presence: true
+    validates :name, :password, presence: true,  :on => :create
     validates :email, presence: true, uniqueness: true
 
     def self.from_omniauth(response)
