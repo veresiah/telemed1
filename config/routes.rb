@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'signup' => 'patients#new'
 
   root 'welcome#main'
+
+  #auth
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :patients, except: [:index]
   resources :physicians 
