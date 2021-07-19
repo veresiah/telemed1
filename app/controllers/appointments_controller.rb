@@ -24,6 +24,11 @@ class AppointmentsController < ApplicationController
   end
 
   def update 
+    if appointment.save
+      redirect_to appointment_path(appointment)
+    else 
+      render 'edit'
+    end 
   end 
 
   def destroy 
@@ -39,5 +44,4 @@ class AppointmentsController < ApplicationController
   def set_appointment
     @appointment = Appointment.find(params[:id])
   end 
-
 end
