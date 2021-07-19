@@ -1,15 +1,15 @@
 class PhysiciansController < ApplicationController
   def index
-    @physicains = Physician.all
+    @physicians = Physician.all
   end
   def new
-    @physicain = Physician.new 
+    @physician = Physician.new 
   end
 
   def create 
-    physicain = Patient.new(physicain_params)
-    if physicain.save
-      redirect_to physicain_path(physicain)
+    physician = Physician.new(physician_params)
+    if physician.save
+      redirect_to physician_path(physician)
     else 
       render 'new'
     end 
@@ -22,15 +22,25 @@ class PhysiciansController < ApplicationController
   end
 
   def update 
-    if @physicain.update(physicain_params)
-        redirect_to physicain_path(@physicain)
+    if @physician.update(physician_params)
+        redirect_to physician_path(@physician)
     else 
         render 'edit'
     end 
   end 
 
   def destroy 
-    @physicain.destory 
-    redirect_to physicains_path
-  end 
+    @physician.destory 
+    redirect_to physicians_path
+  end
+
+  private 
+    
+    def physician_params
+        params.require(:physician).permit(:name, :speciality, :hospital, :education, :years_in_practice)
+    end 
+
+    def set_physician
+      @physician = Physician.find(params[:id])
+    end 
 end
