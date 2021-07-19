@@ -1,12 +1,21 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, except: [:new, :create]
+  def index
+    @appointments = Appointment.all
+  end
+
   def new
     @appointment = Appointment.new 
   end
 
-  def index
-    @appointments = Appointment.all
-  end
+  def create 
+    appointment = Appointment.new(appointment_params)
+    if appointment.save
+      redirect_to appointment_path(appointment)
+    else 
+      render 'new'
+    end 
+  end 
 
   def edit
   end
