@@ -1,2 +1,14 @@
-<h1>Physicians#show</h1>
-<p>Find me in app/views/physicians/show.html.erb</p>
+<h1><%= @physician.name %>'s Profile </h1>
+<br>
+  <ul>
+    <li>Full Name: <%= @physician.name %></li><br>
+    <li>Speciality: <%= @physician.speciality %></li><br>
+    <li>Hospital: <%= @physician.hospital %></li><br>
+    <li>Education: <%= @physician.education %></li><br>
+    <li>Years of Experience: <%= @physician.years_in_practice %></li><br>
+  </ul>
+  Profile Created: <%= @physician.created_at.strftime('%B %d, %Y, %T') %><br> 
+  Profile Updated: <%= @physician.updated_at.strftime('%B %d, %Y, %T') %><br>
+<br>
+
+<%= button_to('Edit Profile', edit_physician_path(@physician), method: :get) %><br>
