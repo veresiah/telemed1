@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  before_action :set_patient, except: [:new, :create]
   def new
     @patient =Patient.new
   end
@@ -35,5 +36,9 @@ class PatientsController < ApplicationController
     
     def patient_params
         params.require(:patient).permit(:uid, :provider, :name, :password, :email, :age, :gender, :medical_conditions, :primary_care, :insurance)
+    end 
+
+    def set_patient
+      @patient = Patient.find(params[:id])
     end 
 end
