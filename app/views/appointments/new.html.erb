@@ -1,6 +1,9 @@
 <h1> New Appointment </h1>
 <br></br>
 <%= form_for(@appointment) do |f| %>
+  <%= f.collection_select :physician, Physician.all, :id, :name %><br></br>
+  <br>
+  <%= f.collection_select :patient, Patient.all, :id, :name %><br><br></br>
   <%= f.label :date %><br>
   <%= f.datetime_field :date %><br>
 
@@ -10,4 +13,4 @@
   <br><%= f.submit %>
 <% end %> 
 <br>
-<%= button_to('Edit Appointment', edit_appointment_path(@appointment), method: :get) %><br>
+
