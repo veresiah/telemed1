@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :patients, except: [:index]
   resources :physicians 
-  resources :appointments, only [:show, :update, :destroy]
+  resources :appointments, only: [:show, :update, :destroy]
 
   #nested
   resources :physicians do
