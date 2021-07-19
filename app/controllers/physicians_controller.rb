@@ -1,5 +1,5 @@
 class PhysiciansController < ApplicationController
-  before_action :set_physician, except: [:new, :create]
+  before_action :set_physician, except: [:new, :create, :index]
   def index
     @physicians = Physician.all
   end
