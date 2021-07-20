@@ -1,4 +1,4 @@
-<h1>All Physicians</h1>
+<h1>All Physicians in <em>New York State</em></h1>
 <ul>
     <% @physicians.each do |physician| %>
         <li> <%= link_to physician.name, physician_path(physician)%></li><br>
