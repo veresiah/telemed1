@@ -10,7 +10,8 @@ class AppointmentsController < ApplicationController
   end
 
   def create 
-    appointment = @physician.appointments.build(appointment_params)
+    @patient = current_user
+    appointment = @physician.appointments.new(appointment_params)
     if appointment.save
       redirect_to appointment_path(appointment)
     else 
@@ -22,13 +23,17 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy 
-    @appointment.destory
-    redirect_to physician_appointments_path
+    if @appointment
+      @appointment.destroy
+      redirect_to physician_appointments_path(@physician)
+    else 
+      redirect_to physician_path(@physician)
+    end 
   end 
 
   private 
   def appointment_params 
-    params.require(:appointment).permit(:date, :reason, :physician_id, :patient_id) 
+    params.require(:appointment).permit(:date, :reason, :patient_id) 
   end 
 
   def set_appointment
@@ -36,6 +41,6 @@ class AppointmentsController < ApplicationController
   end 
 
   def set_physician
-    @physician = Physician.find(params[:physician_id])
+    @physician = Physician.find(params[:id])
   end 
 end
