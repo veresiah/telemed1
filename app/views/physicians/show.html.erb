@@ -8,9 +8,7 @@
     <li>Years of Experience: <%= @physician.years_in_practice %></li><br>
   </ul>
 <br>
-
 <%= button_to('Edit Profile', edit_physician_path(@physician), method: :get) %><br></br>
-
 <%= button_to('Delete Physician', physician_path(@physician), method: :delete) %><br>
 <br>
 <%= button_to('Add Appointment', new_physician_appointment_path(@physician), method: :get) %>
@@ -21,6 +19,5 @@
 <br></br>
 <%= button_to('Back', physicians_path, method: :get) %>
 <br>
-
 Doctor's Profile Created: <%= @physician.created_at.strftime('%B %d, %Y, %T') %><br> 
 Doctor's Profile Updated: <%= @physician.updated_at.strftime('%B %d, %Y, %T') %><br>
