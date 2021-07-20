@@ -1,9 +1,8 @@
 <h1>All Appointments</h1>
 <ul>
     <% @appointments.each do |appointment| %>
-        <li> <%= link_to appointment.date.strftime('%B %-d, %Y, %I:%M %p %Z'), appointment_path(appointment)%></li><br>
-        <li> <%= appointment.physician.name %>
+        <li> <%= link_to appointment.date.strftime('%B %-d, %Y, %I:%M %p %Z'), appointment_path(appointment)%> ||  Patient: <%= appointment.patient.name %></li><br>
     <% end %>
 </ul>
 
-<%= link_to 'Add Appointment', new_physician_appointment_path(@physician) %>
+<%= button_to('Add Appointment', new_physician_appointment_path(@physician), method: :get) %>
