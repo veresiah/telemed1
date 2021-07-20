@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_physician
+  before_action :set_physician, except: [:show, :destroy]
   before_action :set_appointment, only: [:show, :destroy]
   def index
     @appointments = @physician.appointments.all #add scope method here?
@@ -25,9 +25,7 @@ class AppointmentsController < ApplicationController
   def destroy 
     if @appointment
       @appointment.destroy
-      redirect_to physician_appointments_path(@physician)
-    else 
-      redirect_to physician_path(@physician)
+      redirect_to physician_appointments_path(@appointment.physician.id)
     end 
   end 
 
@@ -41,6 +39,6 @@ class AppointmentsController < ApplicationController
   end 
 
   def set_physician
-    @physician = Physician.find(params[:id])
+    @physician = Physician.find(params[:physician_id])
   end 
 end
