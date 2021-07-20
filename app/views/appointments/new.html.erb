@@ -1,16 +1,14 @@
 <h1> New Appointment </h1>
 <br></br>
-<%= form_for @appointment, url: physician_appointments_path(@physician), method: :post do |f| %>
-  <%= f.label :physician %><br>
-  <%= f.collection_select :physician, Physician.all, :id, :name %><br></br>
+<%= form_with(model:[@physician, @appointment], url: physician_appointments_path(@physician), method: :post) do |f| %>
   <%= f.label :patient %><br>
-  <%= f.collection_select :patient, Patient.all, :id, :name %><br><br></br>
+  <%= f.collection_select :patient_id, Patient.all, :id, :name %><br><br></br>
   <%= f.label :date %><br>
   <%= f.datetime_field :date %><br></br>
   <%= f.label :reason %><br>
   <%= f.text_field :reason %><br>
+  <%= f.hidden_field :physician_id%> 
 
   <br><%= f.submit %>
 <% end %> 
 <br>
-
