@@ -4,3 +4,6 @@
         <li> <%= link_to physician.name, physician_path(physician)%></li><br>
     <% end %>
 </ul>
+<%= button_to('Add New Physician', new_physician_path, method: :get) %>
+<br></br>
+<%= button_to('Home', patient_path(current_user), method: :get) %>
