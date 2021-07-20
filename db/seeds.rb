@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Physician.create!(name: "Negin Russel Watson", speciality: "Cardiovascular disease", hospital: "Eastern Niagara Hospital,Lockport, NY", education:"Loma Linda University, CA(2011- 2015), Doctor of Medicine", years_in_practice: "5 years")
+Physician.create!(name: "Shiva Romuald Daniel", speciality: "Neurology", hospital: "St James Mercy Hospital, Hornell, NY", education:"University of California-Davis(2007–2011), MD" , years_in_practice: "7 years")
+Physician.create!(name: "Josiane Katerina McElligott", speciality: "Psychiatry", hospital: "New York-Presbyterian/Hudson Valley Hospital, Cortlandt Manor, NY", education:"Harvard University(2000- 2005), Doctor of Psychiatry", years_in_practice: "15 years")
+Physician.create!(name: "Marilène Roza Trueman", speciality: "Radiation oncology", hospital: "Jamaica Hospital Medical Center, Jamaica, NY", education:"Harvard University(2000- 2005), Doctor of Psychiatry", years_in_practice: "10 years")
+Physician.create!(name: "Renzo Johnathan Coemans", speciality: "Obstetrics and gynecology", hospital: "Long Island Jewish Medical Center, New Hyde Park,NY", education:"Columbia University(1995-2000), MD", years_in_practice: "18 years")
+Physician.create!(name: "Oceanus Justina Benson", speciality: "Psychiatry", hospital: "Jamaica Hospital Medical Center, Jamaica, NY", education:"Johns Hopkins University(2000- 2005), Doctor of Psychiatry", years_in_practice: "10 years")
+Physician.create!(name: "Jerold Ludger Skjeggestad", speciality: "Dermatology", hospital: "Lenox Hill Hospital, New York,NY", education:"University of California-Davis(2000–2010), Doctor of Medicine" , years_in_practice: "10 years")
+Physician.create!(name: "Juliana Nithya Sartore", speciality: "Allergy and immunology", hospital: "St John's Episcopal Hospital at South Shore, Far Rockaway, NY", education:"Loma Linda University, CA(2011- 2015), Doctorate of Immunology", years_in_practice: "5 years" )
+Physician.create!(name: "Ianuarius Babajide Eaton", speciality: "Preventive medicine", hospital: "New York-Presbyterian/Queens, Flushing,NY", education:"Johns Hopkins University(1985- 1990), Doctor of Medicine", years_in_practice: "30 years" )
+Physician.create!(name: "Marcel Neela Sorensen", speciality: "Ophthalmology", hospital: "NY Eye and Ear Infirmary, New York,NY", education:"Johns Hopkins University(1990- 1995), Doctor of Medicine", years_in_practice: "25 years" )
