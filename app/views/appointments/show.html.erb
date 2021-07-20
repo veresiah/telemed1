@@ -3,7 +3,7 @@
   <ul>
     <li>Date and Time: <%= @appointment.date.strftime('%B %-d, %Y, %I:%M %p %Z') %></li><br>
     <li>Physician: <%= @appointment.physician.name %>
-    <li>Reason: <%= @ppointment.reason %></li><br>
+    <li>Reason: <%= @appointment.reason %></li><br>
 </ul>
 <br>
-<%= button_to('Edit Appointment', edit_patient_path(@patient), method: :get) %><br>
+<%= button_to('Delete Appointment', appointment_path(@appointment), method: :delete) %><br>
