@@ -1,6 +1,7 @@
 <h1> <%=@patient.name if @patient %> Profile </h1>
 <br></br>
 <%= form_for(@patient) do |f| %>
+  <%= render 'form' %> 
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
 
