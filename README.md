@@ -1,24 +1,18 @@
-# README
+#Tele Med Appointment Center
+Tele Med is your virtual hub for saving all physicians data. As a user, you can create your patient profile and then add your best and favorite physicians then procced to booking appointments. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+1. Fork and Clone repository.
 
-Things you may want to cover:
+2. Register for your provider credentials at Google as this application is in development.
 
-* Ruby version
+3. Sign up via Google or create a new account. 
 
-* System dependencies
 
-* Configuration
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database creation
+Please make sure to update tests as appropriate.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://github.com/veresiah/telemed1/blob/main/LICENSE)
