@@ -1,2 +1,4 @@
 <h1> New Physician Profile </h1>
 <%= render partial: 'form', locals: {physician: @physician} %>
+<br></br>
+<%= button_to('Back', physicians_path, method: :get) %>
