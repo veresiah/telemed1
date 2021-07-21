@@ -1,4 +1,4 @@
-#Tele Med Appointment Center
+# Tele Med Appointment Center
 Tele Med is your virtual hub for saving all physicians data. As a user, you can create your patient profile and then add your best and favorite physicians then procced to booking appointments. 
 
 ## Installation
