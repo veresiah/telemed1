@@ -1,4 +1,4 @@
-<h1><%= @patient.name %>'s Profile </h1>
+<h1><%= @patient.name %>'s Homepage </h1>
 <br>
   <ul>
     <li>Full Name: <%= @patient.name %></li><br>
@@ -12,6 +12,7 @@
 <%= button_to('Edit Profile', edit_patient_path(@patient), method: :get) %><br>
 <%= button_to('Log Out', logout_path, method: :get) %><br></br>
 <%= link_to 'View All Physicians', physicians_path %><br></br>
+<%= link_to 'View All Appointments', appointments_path %><br></br>
 Patient Profile Created: <%= @patient.created_at.strftime('%B %-d, %Y, %I:%M %p %Z') %><br> 
 Patient Profile Updated: <%= @patient.updated_at.strftime('%B %-d, %Y, %I:%M %p %Z') %><br></br>
 <%=button_to('Delete Profile', patient_path(@patient), method: :delete) %><br>

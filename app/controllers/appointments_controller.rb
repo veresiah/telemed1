@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :set_physician, except: [:show, :destroy]
   before_action :set_appointment, only: [:show, :destroy]
   def index
-    @appointments = @physician.appointments.all #add scope method here?
+    @appointments = @physician.appointments.all
   end
 
   def new
