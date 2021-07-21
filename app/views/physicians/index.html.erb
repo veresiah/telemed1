@@ -1,7 +1,8 @@
 <h1>All Physicians in <em>New York State</em></h1>
 <ul>
+<center>Name || Speciality </center><br>
     <% @physicians.each do |physician| %>
-        <li> <%= link_to physician.name, physician_path(physician)%></li><br>
+        <li> <%= link_to physician.name, physician_path(physician)%> || <%= physician.speciality %></li><br>
     <% end %>
 </ul>
 <%= button_to('Add New Physician', new_physician_path, method: :get) %>
