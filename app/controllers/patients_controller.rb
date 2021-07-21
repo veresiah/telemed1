@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, except: [:new, :create]
+  skip_before_action :require_login, only: [:new]
   def new
     @patient =Patient.new
   end
