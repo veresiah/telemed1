@@ -11,4 +11,12 @@ class Physician < ApplicationRecord
     def self.sort_speciality
         Physician.order(speciality: :asc)
     end 
+
+    def self.search(search)
+        if search
+            Physician.all.where('name LIKE ?', "#{search}")
+        else
+            @physicians = Physician.sort_speciality.alphabetized
+        end 
+    end
 end

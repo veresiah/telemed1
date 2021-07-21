@@ -1,10 +1,16 @@
 <h1>All Physicians in <em>New York State</em></h1>
+<%= form_with url: "/physicians", method: :get do |form| %>
+    <%= form.label :search, "Search by name:" %>
+    <%= form.text_field :search %>
+    <%= form.submit "search", name: nil %>
+<% end %><br></br>
 <ul>
-<center>Name || Speciality </center><br>
+    <center>Name || Speciality </center><br>
     <% @physicians.each do |physician| %>
         <li> <%= link_to physician.name, physician_path(physician)%> || <%= physician.speciality %></li><br>
     <% end %>
 </ul>
+
 <%= button_to('Add New Physician', new_physician_path, method: :get) %>
 <br></br>
 <%= button_to('Home', patient_path(current_user), method: :get) %>

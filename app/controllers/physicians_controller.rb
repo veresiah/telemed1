@@ -1,8 +1,9 @@
 class PhysiciansController < ApplicationController
   before_action :set_physician, except: [:new, :create, :index]
   def index
-    @physicians = Physician.sort_speciality.alphabetized
+    @physicians = Physician.search(params[:search])
   end
+
   def new
     @physician = Physician.new 
   end
@@ -31,14 +32,14 @@ class PhysiciansController < ApplicationController
   end 
 
   def destroy 
-    @physician.destory 
+    @physician.destroy
     redirect_to physicians_path
   end
 
   private 
     
     def physician_params
-        params.require(:physician).permit(:name, :speciality, :hospital, :education, :years_in_practice)
+        params.require(:physician).permit(:name, :speciality, :hospital, :education, :years_in_practice, :search)
     end 
 
     def set_physician

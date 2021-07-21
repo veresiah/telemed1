@@ -11,9 +11,9 @@ class AppointmentsController < ApplicationController
 
   def create 
     @patient = current_user
-    appointment = @physician.appointments.new(appointment_params)
-    if appointment.save
-      redirect_to appointment_path(appointment)
+    @appointment = @physician.appointments.new(appointment_params)
+    if @appointment.save
+      redirect_to appointment_path(@appointment)
     else 
       render 'new'
     end 
