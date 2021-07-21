@@ -7,3 +7,5 @@
 </ul>
 <br>
 <%= button_to('Delete Appointment', appointment_path(@appointment), method: :delete) %><br>
+<br></br>
+<%= button_to('Home', patient_path(current_user), method: :get) %>
